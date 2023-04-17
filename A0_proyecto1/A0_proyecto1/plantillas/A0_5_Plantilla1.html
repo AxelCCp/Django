@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color:#AAB7B8;">
+    <h1>Hola Alumnos, esta es la primera plantilla!</h1>
+    <br>
+    <p>El nombre del profesor es: {{nombre_persona}} {{apellido_persona}}</p>
+    <br>
+    <p>Estamos viendo lo de las plantillas el d&iacute;a: {{ahora}}</p>
+    <p>Estamos viendo lo de las plantillas el d&iacute;a: {{ahora.day}} / {{ahora.month}} / {{ahora.year}}</p>
+    <br>
+
+    <p>El nombre del profesor 2 es: {{nombre2}} {{apellido2}}</p>
+
+    <br>
+    <br>
+
+    <p>{{temas.1}}</p>
+    <p>{{temas}}</p>
+
+    <br>
+
+    <p><strong>Temas del curso</strong></p>
+
+    <p>
+        {% for elTema in temas %}
+           <p> {{elTema}} </p>
+        {% endfor %}
+    </p>
+    
+    <br>
+    
+    <p><strong>Temas del curso</strong></p>
+
+    <ul>
+        {% for elTema in temas %}
+           <li> {{elTema}} </li>
+        {% endfor %}
+    </ul>
+
+    <br>
+    
+    <p><strong>Temas 2 del curso</strong></p>
+
+    
+    <ul>
+        {% if temas2 %}
+            {% for elTema in temas %}
+             <li> {{elTema}} </li>
+            {% endfor %}
+        {% else %}
+            <p>No hay elementos q mostrar.</p>            
+        {% endif %}
+    </ul>
+
+
+    {# ESTO ES UN COMENTARIO DE LA CLASE 8 #}
+
+    {% comment %} 
+        ESTO ES UN 
+        COMENTARIO DE 
+        VARIAS LINEAS
+    {% endcomment %} 
+
+    <p>---------------clase 8-----------------------</p>
+
+
+    {% if nombre_persona == 'Juan' %}
+        <p>El curso lo imparte el profesor titular</p>
+    {% else %}
+        <p>El curso lo imparte el profesor suplente</p>
+    {% endif %}
+
+    <br>
+
+    <p>El nombre del profesor en MAYUSCULAS es: {{nombre_persona.upper}} {{apellido_persona|upper}}</p>
+
+    <p>primeras letra : </p>
+    <ul>
+        {% for elTema in temas %}
+           <li> {{elTema|first}} </li>
+        {% endfor %}
+    </ul>
+
+    <br>
+
+    <p>primeras letra en minuscula : </p>
+    <ul>
+        {% for elTema in temas %}
+           <li> {{elTema|first|lower}} </li>
+        {% endfor %}
+    </ul>
+
+    <br>
+
+    <p>---------------clase 9-----------------------</p>
+    
+
+    <p>PLANTILLAS INCRUSTADAS  ------- A1_9_Barra.html </p>
+
+    {% include  "superior/A1_9_Barra.html" %}
+
+
+</body>
+</html>

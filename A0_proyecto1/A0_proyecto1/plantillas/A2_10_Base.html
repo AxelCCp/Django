@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block tittle %} {% endblock %}</title>
+</head>
+<body style="background-color:#AAB7B8;">
+    
+    <h1 style="background-color: darkslateblue; color: thistle; text-align: center;">Píldoras Informáticas</h1>
+
+    {% include  "superior/A1_9_Barra.html" %}
+
+    <h3>Cursos de programación, ofimática  y diseño web</h3>
+
+    {% block content %} {% endblock %}
+
+    <p style="background-color: darkslateblue; color: thistle; text-align: right;">Cursos gratuitos. Gracias por su visita</p>
+
+</body>
+</html>
